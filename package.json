@@ -1,0 +1,21 @@
+{
+  "name": "trabajo-practico-4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "Ruiz Diaz Dario Ezequiel",
+  "license": "ISC",
+  "description": "Trabajo practico para la clase de Taller de programación",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7"
+  }
+}
