@@ -5,6 +5,7 @@ const Character = sequelize.define(
         id: {
             primaryKey: true,
             autoIncrement: true,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         name: {
