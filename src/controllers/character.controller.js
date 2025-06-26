@@ -5,20 +5,23 @@ import characterValidator from "../validators/characterValidator.js";
 export const createCharacter = async (req, res) => {
   const { name, ki, race, gender, description } = req.body;
 
+  
   const errores = characterValidator({ name, ki, race, gender, description });
-
+  
   if (errores.length > 0) {
     return res.status(400).json({ errores });
   }
-
+  
   try {
     const existingCharacter = await Character.findOne({ where: { name } });
-
+    
     if (existingCharacter) {
       return res.status(409).json({ error: "Ya existe un personaje con ese nombre" });
     }
-
-    const character = await Character.create({ name, ki, race, gender, description });
+    
+    const newKi = parseInt(ki) 
+    
+    const character = await Character.create({ name, newKi, race, gender, description });
     res.status(201).json(character);
   } catch (error) {
     res.status(500).json({ error: err.message });
